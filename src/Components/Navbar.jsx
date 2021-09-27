@@ -15,6 +15,11 @@ const Left = styled.div`
   width: 33.3%;
 `;
 
+const Language = styled.span`
+  font-size: 14;
+  cursor: pointer;
+`;
+
 const Center = styled.div`
   width: 33.3%;
 `;
@@ -27,7 +32,9 @@ const Navbar = () => {
   return (
     <Container>
       <Wrapper>
-        <Left>Left</Left>
+        <Left>
+          <Language>EN</Language>
+        </Left>
         <Center> Center</Center>
         <Right> Right </Right>
       </Wrapper>
