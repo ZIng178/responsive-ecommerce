@@ -35,6 +35,7 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
+  transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
@@ -82,8 +83,10 @@ const Slider = () => {
   const handleClick = (direction) => {
     if (direction === "left") {
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+      // if it's not the first item make it -1 else make it go to the last item which is index 2
     } else {
       setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+      // we can go to the next index else return the first slide which is index 0
     }
   };
   return (
