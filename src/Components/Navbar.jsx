@@ -41,6 +41,8 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
+  font-size: 50px;
+  text-align: center;
 `;
 const Right = styled.div`
   width: 33.3%;
@@ -67,7 +69,7 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>HAMRO BAZAAR</Logo>
+          <Logo>MYTHIC</Logo>
         </Center>
         <Right>
           <MenuItem> REGISTER</MenuItem>
