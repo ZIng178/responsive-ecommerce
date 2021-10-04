@@ -37,9 +37,17 @@ const Right = styled.div`
 `;
 const Title = styled.h3``;
 
-const List = styled.ul``;
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+`;
 
-const ListItem = styled.li``;
+const ListItem = styled.li`
+  width: 50%;
+`;
 
 const Footer = () => {
   return (
