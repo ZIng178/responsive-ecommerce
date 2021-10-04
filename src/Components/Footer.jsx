@@ -58,7 +58,15 @@ const ListItem = styled.li`
   margin-bottom: 10px;
 `;
 
-const ContactItem = styled.li``;
+const ContactItem = styled.div`
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+`;
+
+const Payment = styled.img`
+  width: 50%;
+`;
 
 const Footer = () => {
   return (
@@ -103,16 +111,16 @@ const Footer = () => {
       <Right>
         <Title> Contact</Title>
         <ContactItem>
-          <Room />
+          <Room style={{ marginRight: "10px" }} />
           12345 Broadway , NY, NY 10013{" "}
         </ContactItem>
         <ContactItem>
           {" "}
-          <Phone />
+          <Phone style={{ marginRight: "10px" }} />
           718987655
         </ContactItem>
         <ContactItem>
-          <Email />
+          <Email style={{ marginRight: "10px" }} />
           contactmythic@Mythic.com
         </ContactItem>
         <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
