@@ -1,4 +1,12 @@
-import { Facebook, Instagram, Pinterest, Twitter } from "@material-ui/icons";
+import {
+  Email,
+  Facebook,
+  Instagram,
+  Phone,
+  Pinterest,
+  Room,
+  Twitter,
+} from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 
@@ -47,7 +55,10 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   width: 50%;
+  margin-bottom: 10px;
 `;
+
+const ContactItem = styled.li``;
 
 const Footer = () => {
   return (
@@ -89,7 +100,22 @@ const Footer = () => {
           <ListItem>Terms</ListItem>
         </List>
       </Center>
-      <Right></Right>
+      <Right>
+        <Title> Contact</Title>
+        <ContactItem>
+          <Room />
+          12345 Broadway , NY, NY 10013{" "}
+        </ContactItem>
+        <ContactItem>
+          {" "}
+          <Phone />
+          718987655
+        </ContactItem>
+        <ContactItem>
+          <Email />
+          contactmythic@Mythic.com
+        </ContactItem>
+      </Right>
     </Container>
   );
 };
