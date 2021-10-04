@@ -115,6 +115,7 @@ const Footer = () => {
           <Email />
           contactmythic@Mythic.com
         </ContactItem>
+        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
       </Right>
     </Container>
   );
