@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-
+import { mobile } from "../responsive";
 const Container = styled.div`
   height: 30px;
   background-color: teal;
@@ -10,6 +10,7 @@ const Container = styled.div`
   justify-content: center;
   font-size: 14px;
   font-weight: 500;
+  ${mobile({ width: "100%", fontSize: "11px", marginTop: "2px" })}
 `;
 
 const Announcements = () => {

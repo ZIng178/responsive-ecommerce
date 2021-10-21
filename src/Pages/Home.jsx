@@ -6,10 +6,20 @@ import Navbar from "../Components/Navbar";
 import NewsLetter from "../Components/NewsLetter";
 import Products from "../Components/Products";
 import Slider from "../Components/Slider";
+import styled from "styled-components";
+import { mobile } from "../responsive";
 
+const Container = styled.div`
+  ${mobile({
+    width: "100%",
+    fontSize: "11px",
+    marginTop: "2px",
+    padding: "0 10px",
+  })}
+`;
 const Home = () => {
   return (
-    <div>
+    <Container>
       <Announcements />
       <Navbar />
       <Slider />
@@ -17,7 +27,7 @@ const Home = () => {
       <Products />
       <NewsLetter />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

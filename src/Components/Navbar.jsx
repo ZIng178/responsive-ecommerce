@@ -6,14 +6,20 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   height: 60px;
-  ${mobile({ height: "51px" })}
+
+  ${mobile({
+    width: "100%",
+    fontSize: "11px",
+    marginTop: "2px",
+    height: "51px",
+  })}
 `;
 
 const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
   justify-content: space between;
-  ${mobile({ padding: "10px 0" })}
+  ${mobile({ padding: "8px 0" })}
 `;
 
 const Left = styled.div`
@@ -38,7 +44,7 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
   border: none;
-  ${mobile({ width: "50px" })}
+  ${mobile({ width: "60px", marginLeft: "10px" })}
 `;
 const Center = styled.div`
   width: 33.3%;

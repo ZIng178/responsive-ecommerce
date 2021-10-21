@@ -39,6 +39,7 @@ const Wrapper = styled.div`
   display: flex;
   transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
+  ${mobile({ width: "100%" })}
 `;
 
 const Slide = styled.div`
@@ -46,6 +47,7 @@ const Slide = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
+  ${mobile({ width: "100%" })}
 `;
 const ImgContainer = styled.div`
   height: 100%;
