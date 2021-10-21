@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Announcements from "../Components/Announcements";
 import Footer from "../Components/Footer";
@@ -39,6 +39,17 @@ const Option = styled.option``;
 const ProductList = () => {
   const location = useLocation();
   const cat = location.pathname.split("/")[2];
+  const [filter, setFilter] = useState({});
+
+  const handleFilters = (e) => {
+    const value = e.target.value;
+    setFilter({
+      ...filter,
+      [e.target.name]: value,
+    });
+  };
+  console.log(filter);
+
   return (
     <Container>
       <Navbar />
@@ -47,10 +58,8 @@ const ProductList = () => {
       <FilterContainer>
         <Filter>
           <FilterText> Filter Products:</FilterText>
-          <Select>
-            <Option disabled selected>
-              Color
-            </Option>
+          <Select name="color" onChange={handleFilters}>
+            <Option disabled>Color</Option>
             <Option>White</Option>
             <Option>Black</Option>
             <Option>Red</Option>
@@ -58,10 +67,8 @@ const ProductList = () => {
             <Option>Yellow</Option>
             <Option>Green</Option>
           </Select>
-          <Select>
-            <Option disabled selected>
-              Size
-            </Option>
+          <Select name="size" onChange={handleFilters}>
+            <Option disabled>Size</Option>
             <Option>XS</Option>
             <Option>S</Option>
             <Option>M</Option>
