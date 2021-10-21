@@ -6,6 +6,7 @@ import Navbar from "../Components/Navbar";
 import NewsLetter from "../Components/NewsLetter";
 import Products from "../Components/Products";
 import { mobile } from "../responsive";
+import { useLocation } from "react-router";
 
 const Container = styled.div``;
 const Title = styled.div`
@@ -36,6 +37,8 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const ProductList = () => {
+  const location = useLocation();
+  const cat = location.pathname.split("/")[2];
   return (
     <Container>
       <Navbar />
