@@ -1,12 +1,14 @@
 import { Button } from "@material-ui/core";
 import { Add, Remove } from "@material-ui/icons";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Announcements from "../Components/Announcements";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import NewsLetter from "../Components/NewsLetter";
 import { mobile } from "../responsive";
+import { useLocation } from "react-router-dom";
+import { publicRequest } from "../requestMethod";
 
 const Container = styled.div``;
 
@@ -103,26 +105,32 @@ const Button1 = styled.button`
 `;
 
 const Product = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/find/" + id);
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
   return (
     <Container>
       <Navbar />
       <Announcements />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+          <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
-          <Title>Denim Jumpsuit </Title>
-          <Desc>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-            blanditiis perferendis aut? Ab optio delectus magnam debitis est,
-            beatae sequi adipisci incidunt ipsam aut soluta blanditiis facilis
-            eaque ad ratione. Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Qui alias sunt animi aperiam, soluta atque
-            inventore impedit maxime doloribus fugit rerum nihil sequi esse.
-            Alias quidem velit amet expedita numquam!
-          </Desc>
-          <Price>$20</Price>
+          <Title>{product.Title} </Title>
+          <Desc>{product.desc}</Desc>
+          <Price>{product.price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
