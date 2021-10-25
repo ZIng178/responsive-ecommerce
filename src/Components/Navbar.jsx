@@ -56,7 +56,8 @@ const Logo = styled.h1`
   font-weight: bold;
   font-size: 50px;
   text-align: center;
-  ${mobile({ fontSize: "25px" })}
+  text-decoration: none;
+  ${mobile({ fontSize: "25px" })};
 `;
 const Right = styled.div`
   width: 33.3%;
@@ -87,11 +88,17 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>MYTHIC</Logo>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Logo>MYTHIC</Logo>
+          </Link>
         </Center>
         <Right>
-          <MenuItem> REGISTER</MenuItem>
-          <MenuItem> SIGN IN </MenuItem>
+          <Link to="/register" style={{ textDecoration: "none" }}>
+            <MenuItem> REGISTER</MenuItem>
+          </Link>
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <MenuItem> SIGN IN </MenuItem>
+          </Link>
 
           <Link to="/cart">
             <MenuItem>

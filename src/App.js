@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link,
   Redirect,
 } from "react-router-dom";
 
@@ -33,12 +32,12 @@ function App() {
         <Route path="/cart">
           <Cart />
         </Route>
+
         <Route path="/login">
-          {user ? <Redirect to="/" /> : <Login />}
           <Login />
         </Route>
+
         <Route path="/register">
-          {user ? <Redirect to="/" /> : <Register />}
           <Register />
         </Route>
       </Switch>

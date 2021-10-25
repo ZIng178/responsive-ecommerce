@@ -7,8 +7,6 @@ import { Add, Remove } from "@material-ui/icons";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
-import mythiclogo from "../images/mythiclogo.png";
-
 const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
@@ -166,7 +164,7 @@ const Cart = () => {
     setStripeToken(token);
   };
 
-  console.log(stripeToken);
+  console.log("stripetojen", stripeToken);
   return (
     <Container>
       <Navbar />
