@@ -114,6 +114,7 @@ const Product = () => {
     const getProduct = async () => {
       try {
         const res = await publicRequest.get("/products/find/" + id);
+        console.log("res", res);
         setProduct(res.data);
       } catch {}
     };
@@ -128,25 +129,22 @@ const Product = () => {
           <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
-          <Title>{product.Title} </Title>
+          <Title>{product.title} </Title>
           <Desc>{product.desc}</Desc>
-          <Price>{product.price}</Price>
+          <Price>${product.price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
+              {product.color?.map((c) => (
+                <FilterColor color={c} key={c} />
+              ))}
             </Filter>
             <Filter>
               <FilterTitle> Size:</FilterTitle>
               <FilterSize>
-                <FilterSizeOption> XS</FilterSizeOption>
-                <FilterSizeOption> S</FilterSizeOption>
-                <FilterSizeOption> M</FilterSizeOption>
-                <FilterSizeOption> L</FilterSizeOption>
-                <FilterSizeOption> XL</FilterSizeOption>
-                <FilterSizeOption> XXL</FilterSizeOption>
+                {product.size?.map((s) => (
+                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                ))}
               </FilterSize>
             </Filter>
           </FilterContainer>
