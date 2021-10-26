@@ -9,23 +9,18 @@ import { Link } from "react-router-dom";
 const Container = styled.div`
   height: 60px;
 
-  ${mobile({
-    width: "100%",
-    fontSize: "11px",
-    marginTop: "2px",
-    height: "51px",
-  })}
+  ${mobile({ height: "50px" })}
 `;
 
 const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
   justify-content: space between;
-  ${mobile({ padding: "8px 0" })}
+  ${mobile({ padding: "10px 0px" })}
 `;
 
 const Left = styled.div`
-  width: 33.3%;
+  flex: 1;
   display: flex;
   align-items: center;
 `;
@@ -46,10 +41,11 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
   border: none;
-  ${mobile({ width: "60px", marginLeft: "10px" })}
+  ${mobile({ width: "50px" })}
 `;
 const Center = styled.div`
-  width: 33.3%;
+  flex: 1;
+  text-align: center;
 `;
 
 const Logo = styled.h1`
@@ -57,10 +53,10 @@ const Logo = styled.h1`
   font-size: 50px;
   text-align: center;
   text-decoration: none;
-  ${mobile({ fontSize: "25px" })};
+  ${mobile({ fontSize: "20px" })};
 `;
 const Right = styled.div`
-  width: 33.3%;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;

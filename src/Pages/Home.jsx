@@ -9,14 +9,7 @@ import Slider from "../Components/Slider";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
-const Container = styled.div`
-  ${mobile({
-    width: "100%",
-    fontSize: "11px",
-    marginTop: "2px",
-    padding: "0 10px",
-  })}
-`;
+const Container = styled.div``;
 const Home = () => {
   return (
     <Container>

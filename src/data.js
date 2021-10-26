@@ -1,7 +1,7 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://images.pexels.com/photos/1269998/pexels-photo-1269998.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    img: "https://i.ibb.co/cXFnLLV/3.png",
     title: "SUMMER SALE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "f5fafd",
