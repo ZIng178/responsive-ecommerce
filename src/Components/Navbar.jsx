@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Login from "../Pages/Login";
 
 const Container = styled.div`
   height: 60px;
@@ -72,6 +73,7 @@ const MenuItem = styled.div`
 
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
+  const user = useSelector((state) => state.user.currentUser);
 
   return (
     <Container>
@@ -92,9 +94,17 @@ const Navbar = () => {
           <Link to="/register" style={{ textDecoration: "none" }}>
             <MenuItem> REGISTER</MenuItem>
           </Link>
-          <Link to="/login" style={{ textDecoration: "none" }}>
-            <MenuItem> SIGN IN </MenuItem>
-          </Link>
+          {!user && (
+            <Link to="/login" style={{ textDecoration: "none" }}>
+              <MenuItem> SIGN IN </MenuItem>
+            </Link>
+          )}
+
+          {user && (
+            <Link to="/logout" style={{ textDecoration: "none" }}>
+              <MenuItem> LOGOUT</MenuItem>
+            </Link>
+          )}
 
           <Link to="/cart">
             <MenuItem>
