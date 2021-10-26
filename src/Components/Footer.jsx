@@ -12,9 +12,7 @@ import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
-  @media screen and (max-width: 380px) {
-    backgroundcolor: "red";
-  }
+  ${mobile({ flexDirection: "column" })}
 `;
 
 const Left = styled.div`
@@ -79,7 +77,6 @@ const ContactItem = styled.div`
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  ${mobile({ flexDirection: "column" })}
 `;
 
 const Payment = styled.img`
