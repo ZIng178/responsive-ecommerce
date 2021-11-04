@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { logout } from "../redux/userRedux";
 import { useDispatch, useSelector } from "react-redux";
 import { mobile } from "../responsive";
+import { useHistory } from "react-router";
 
 const Container = styled.div`
   width: 100vw;
@@ -53,6 +54,7 @@ const Button = styled.button`
 
 const Logout = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const { isFetching, error } = useSelector((state) => state.user);
   const handleClick = (e) => {
     e.preventDefault();
