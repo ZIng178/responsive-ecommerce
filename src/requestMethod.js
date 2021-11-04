@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5001/api/";
+const BASE_URL = "https://mythicstore.herokuapp.com/api/";
 const TOKEN =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNmQ4ODg5ZDY1MzVkMWYwNGRkMzRkMiIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2MzUxMTMyNTIsImV4cCI6MTYzNTM3MjQ1Mn0.rsxlc8taQd_nbvpaB2qSaezBgPaw5zuunMQcAOlYyT4 ";
 
